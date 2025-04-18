@@ -78,8 +78,17 @@ WSGI_APPLICATION = 'cricket.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'mssql',
+        'NAME': 'azure-db',
+        'USER': 'Harshavardhan',
+        'PASSWORD': 'harsha@125',
+        'HOST': 'harshadbservers.database.windows.net',
+        'PORT': '1433',
+        'OPTIONS': {
+            'driver': 'ODBC Driver 18 for SQL Server',
+            'encrypt': 'yes',  # Force SSL encryption
+            'trustServerCertificate': 'no',  # Ensure SSL certificate validation
+        },
     }
 }
 
